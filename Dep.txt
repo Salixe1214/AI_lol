@@ -7,7 +7,7 @@ pip install --upgrade pocketsphinx
 ### Installer le francais
 dossier = python -c "import speech_recognition as sr, os.path as p; print(p.dirname(sr.__file__))"
 cd dossier
-
+wget https://drive.google.com/u/0/uc?id=0Bw_EqP-hnaFNN2FlQ21RdnVZSVE&export=download -o fr-FR
 
 
 pip install pyttsx3
