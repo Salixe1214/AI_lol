@@ -32,6 +32,6 @@ if any(word in text for word in ["blague", "histoire drôle", "marrant"]):
 
 if any(word in text for word in ["je t'aime", "tu es un amour", "bisous"]):
     engine.say("C'est gênant")
-    print("\n\n\n(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄")
+    print("\n\n\n(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄\n\n\n")
 
 engine.runAndWait()
