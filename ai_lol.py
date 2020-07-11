@@ -1,8 +1,7 @@
 
 # NOTE: this example requires PyAudio because it uses the Microphone class
-
-
 import speech_recognition as sr
+from jokes import randJk
 
 # obtain audio from the microphone
 r = sr.Recognizer()
@@ -19,6 +18,7 @@ except sr.UnknownValueError:
 except sr.RequestError as e:
     print("Sphinx error; {0}".format(e))
 
+
 if text == "histoire drôle":
     blague = "Il était une fois...\nAh! pis d'la marde!"
 
@@ -27,7 +27,9 @@ if text == "histoire drôle":
     voice = engine.getProperty('voices')[1] # the french voice
 
     engine.setProperty('voice', voice.id)
+    joke = randJk()
+    print(joke)
 
-    engine.say(blague) # perfect # it works!!
+    engine.say(joke) # perfect # it works!!
 
     engine.runAndWait()
