@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
 
 # NOTE: this example requires PyAudio because it uses the Microphone class
+
 
 import speech_recognition as sr
 
@@ -20,5 +20,14 @@ except sr.RequestError as e:
     print("Sphinx error; {0}".format(e))
 
 if text == "histoire drôle":
-    print("Il était une fois...")
-    print("Ah! pis de la marde!")
+    blague = "Il était une fois...\nAh! pis d'la marde!"
+
+    import pyttsx3
+    engine = pyttsx3.init()
+    voice = engine.getProperty('voices')[1] # the french voice
+
+    engine.setProperty('voice', voice.id)
+
+    engine.say(blague) # perfect # it works!!
+
+    engine.runAndWait()
