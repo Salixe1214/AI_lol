@@ -1,27 +1,20 @@
-#import library
+#!/usr/bin/env python3
+
+# NOTE: this example requires PyAudio because it uses the Microphone class
+
 import speech_recognition as sr
 
-# Initialize recognizer class (for recognizing the speech)
+# obtain audio from the microphone
 r = sr.Recognizer()
-
-# Reading Audio file as source
-# listening the audio file and store in audio_text variable
-
-
 with sr.Microphone() as source:
-    x = 0
-    while x < 5:
+    print("Say something!")
+    audio = r.listen(source)
 
-        audio_text = r.listen(source)
-
-    # recoginize_() method will throw a request error if the API is unreachable, hence using exception handling
-        try:
-
-            # using google speech recognition
-            text = r.recognize_sphinx(audio_text)
-            print(text)
-
-        except:
-             print('Sorry.. run again...')
-
-        x = x + 1
+# recognize speech using Sphinx
+try:
+    text = r.recognize_sphinx(audio)
+    print(text)
+except sr.UnknownValueError:
+    print("Sphinx could not understand audio")
+except sr.RequestError as e:
+    print("Sphinx error; {0}".format(e))
