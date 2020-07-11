@@ -39,6 +39,6 @@ if text[0:12] == "combien font":
     if eqt[1] == "+":
         rep = "{}".format(int(eqt[0]) + int(eqt[2]))
     print("Ça fait: {}".format(rep))
-    engine.say(rep)
+    engine.say("Ça fait: {}".format(rep))
 
 engine.runAndWait()
