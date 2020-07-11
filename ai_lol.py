@@ -12,9 +12,13 @@ with sr.Microphone() as source:
 
 # recognize speech using Sphinx
 try:
-    text = r.recognize_sphinx(audio)
+    text = r.recognize_sphinx(audio, language = "fr-FR")
     print(text)
 except sr.UnknownValueError:
     print("Sphinx could not understand audio")
 except sr.RequestError as e:
     print("Sphinx error; {0}".format(e))
+
+if text == "histoire drôle":
+    print("Il était une fois...")
+    print("Ah! pis de la marde!")
