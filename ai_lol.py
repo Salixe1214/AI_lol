@@ -19,7 +19,7 @@ except sr.RequestError as e:
     print("Sphinx error; {0}".format(e))
 
 
-if text == "histoire drôle":
+if any(word in text.split() for word in ["blague", "histoire drôle", "marrant"]):
     blague = "Il était une fois...\nAh! pis d'la marde!"
 
     import pyttsx3
