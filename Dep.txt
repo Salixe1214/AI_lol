@@ -1,0 +1,22 @@
+pip install SpeechRecognition
+
+pip install PyAudio
+
+pip install --upgrade pocketsphinx
+
+### Installer le francais
+dossier = python -c "import speech_recognition as sr, os.path as p; print(p.dirname(sr.__file__))"
+cd dossier
+
+
+
+pip install pyttsx3
+
+### Pour trouver le francais (dans python)
+import pyttsx3
+engine = pyttsx3.init()
+voices = engine.getProperty('voices') # the french voice
+for v in voices:
+    print(v)
+
+(s'il n'est pas installé, tu dois l'installer grace a la magie des recherches google, pcq... fck you :( )
