@@ -11,7 +11,7 @@ with sr.Microphone() as source:
 
 # recognize speech using Sphinx
 try:
-    text = r.recognize_sphinx(audio, language = "fr-FR")
+    text = r.recognize_google(audio, language = "fr-CA")
     print(text)
 except sr.UnknownValueError:
     print("Sphinx could not understand audio")
