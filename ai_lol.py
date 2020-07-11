@@ -30,7 +30,7 @@ if any(word in text for word in ["blague", "histoire drôle", "marrant"]):
     print(joke)
     engine.say(joke) # perfect # it works!!
 
-if any(word in text for word in ["je t'aime", "tu es un amours", "bisous"]):
+if any(word in text for word in ["je t'aime", "tu es un amour", "bisous"]):
     engine.say("C'est gênant")
     print("\n\n\n(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄")
 
