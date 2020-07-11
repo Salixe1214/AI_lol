@@ -34,4 +34,11 @@ if any(word in text for word in ["je t'aime", "tu es un amour", "bisous"]):
     engine.say("C'est gênant")
     print("\n\n\n(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄\n\n\n")
 
+if text[0:12] == "combien font":
+    eqt = text[12:len(text)].split()
+    if eqt[1] == "+":
+        rep = "{}".format(int(eqt[0]) + int(eqt[2]))
+    print(rep)
+    engine.say(rep)
+
 engine.runAndWait()
