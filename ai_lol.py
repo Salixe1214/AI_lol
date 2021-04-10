@@ -6,8 +6,13 @@ import pyttsx3
 
 # Settings pour tts
 engine = pyttsx3.init()
-voice = engine.getProperty('voices')[1] # the french voice
-engine.setProperty('voice', voice.id)
+voices = engine.getProperty('voices')
+v_id = voices[0].id
+for voice in voices:
+    if 'French' in voice.name:
+        v_id = voice.id
+
+engine.setProperty('voice', v_id)
 
 # obtain audio from the microphone
 r = sr.Recognizer()
@@ -32,12 +37,12 @@ if any(word in text for word in ["blague", "histoire drôle", "marrant"]):
 
 if any(word in text for word in ["je t'aime", "tu es un amour", "bisous"]):
     engine.say("C'est gênant")
-    print("\n\n\n(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄\n\n\n")
+    print("\n\n\n(/ /*/w/*/ /)/\n\n\n")
 
 if text[0:12] == "combien font" and len(text[12:len(text)].split()) == 3:
     eqt = text[12:len(text)].split()
     if eqt[1] == "+":
-        rep = "{}".format(int(eqt[0]) + int(eqt[2]))
+        rep = "{}".format(float(eqt[0]) + float(eqt[2]))
     print("Ça fait: {}".format(rep))
     engine.say("Ça fait: {}".format(rep))
 
