@@ -46,4 +46,17 @@ if text[0:12] == "combien font" and len(text[12:len(text)].split()) == 3:
     print("Ça fait: {}".format(rep))
     engine.say("Ça fait: {}".format(rep))
 
+if any(word in text for word in ["aide", "que peux-tu faire", "fonctionnalités", "fonctionnalité",
+                                 "fonctionnalitée", "fonctionnalitées"]):
+    phrase = "Je peux:\n"
+    phrase = phrase + "Raconter une blague\n"
+    phrase = phrase + "Faire une addition binaire\n"
+    phrase = phrase + "Lister mes fonctionnalités\n"
+
+# if any(word in text for word in ["roche, papier, ciseau", "shifumi"]):
+#     """
+#     # TODO: Faire un jeu de roche-papier-sciseau.
+#     """
+#     skip
+
 engine.runAndWait()
