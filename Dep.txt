@@ -19,4 +19,4 @@ voices = engine.getProperty('voices') # the french voice
 for v in voices:
     print(v)
 
-(s'il n'est pas installé, tu dois l'installer grace a la magie des recherches google, pcq... fck you :( )
+pour installer pip: https://phoenixnap.com/kb/install-pip-windows
