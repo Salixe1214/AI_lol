@@ -29,6 +29,10 @@ except sr.UnknownValueError:
 except sr.RequestError as e:
     print("Sphinx error; {0}".format(e))
 
+if any(word in text for word in ["est-ce que tu peux être drôle"]):
+    joke = "Non!"
+    print(joke)
+    engine.say(joke) # perfect # it works!!
 
 if any(word in text for word in ["blague", "histoire drôle", "marrant"]):
     joke = randJk()
@@ -51,7 +55,9 @@ if any(word in text for word in ["aide", "que peux-tu faire", "fonctionnalités"
     phrase = "Je peux:\n"
     phrase = phrase + "Raconter une blague\n"
     phrase = phrase + "Faire une addition binaire\n"
-    phrase = phrase + "Lister mes fonctionnalités\n"
+    phrase = phrase + "Lister mes fonctionnalités.\n"
+    print(phrase)
+    engine.say(phrase)
 
 # if any(word in text for word in ["roche, papier, ciseau", "shifumi"]):
 #     """
